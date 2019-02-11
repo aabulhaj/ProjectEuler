@@ -4,16 +4,16 @@
 
 (define num (map (lambda (x) (- (char->integer x) 48)) (string->list num_str)))
 
-(define (head_n lst n) (drop-right lst (- (length lst) n)))
-
-(define (max_adj num)
+(define (max_adj num consecuitive)
   (cond
-    [(< (length num) 13) 0]
-    [else (max (apply * (head_n num 13)) (max_adj (rest num)))]
+    [(< (length num) consecuitive) 0]
+    [else (max (apply * (take num consecuitive)) (max_adj (rest num) consecuitive))]
     )
   )
 
-(max_adj num)
+(provide max_adj)
+
+; (max_adj num 13)
 
 
 
