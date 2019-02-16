@@ -1,5 +1,5 @@
 #lang racket
 
-(require "../helpers/primes.rkt")
+(require "common.rkt")
 
 (apply + (sieve_primes 2000000))

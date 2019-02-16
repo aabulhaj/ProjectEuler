@@ -30,3 +30,14 @@
             n))
   )
 (provide sieve_primes)
+
+
+(define (factors_count n (x 2) (count 0))
+  (cond
+    [(and (= n 1) (= count 0)) 1]
+    [(and (> x (add1 (integer-sqrt n))) (= count 0)) 2]
+    [(= (modulo n x) 0) (factors_count (/ n x) x (add1 count))]
+    [else (if (> count 0) (* (add1 count) (factors_count n (add1 x) 0)) (factors_count n (add1 x) 0))]
+    )
+  )
+(provide factors_count)
