@@ -2,4 +2,4 @@
 
 (require "common.rkt")
 
-(apply + (sieve_primes 2000000))
+(apply + (sieve-primes 2000000))

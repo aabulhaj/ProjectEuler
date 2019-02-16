@@ -1,5 +1,5 @@
 #lang racket
-(define (special_py_triplet)
+(define (special-py-triplet)
   (first (for*/list ([a (in-range 1 1000)]
                      [b (in-range (+ a 1) 1000)]
                      #:when (let ([c (- 1000 a b)])
@@ -7,5 +7,5 @@
            (* a b (- 1000 a b))))
   )
 
-(special_py_triplet)
+(special-py-triplet)
 

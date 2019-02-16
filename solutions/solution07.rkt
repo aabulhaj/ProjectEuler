@@ -1,6 +1,6 @@
 #lang racket
 
-(define (is_prime n)
+(define (is-prime n)
   (cond
     [(= n 1) #f]
     [(< n 4) #t]
@@ -18,13 +18,13 @@
   )
 
 #|i must be an odd number|#
-(define (nth_prime_from_i n i)
+(define (nth-prime-from-i n i)
   (cond
-    [(<= i 2) (nth_prime_from_i (- n 1) 3)]
-    [(and (= n 1) (is_prime i)) i]
-    [(is_prime i) (nth_prime_from_i (- n 1) (+ i 2))]
-    [else (nth_prime_from_i n (+ i 2))]
+    [(<= i 2) (nth-prime-from-i (- n 1) 3)]
+    [(and (= n 1) (is-prime i)) i]
+    [(is-prime i) (nth-prime-from-i (- n 1) (+ i 2))]
+    [else (nth-prime-from-i n (+ i 2))]
     )
   )
 
-(nth_prime_from_i 10000 3)
+(nth-prime-from-i 10000 3)

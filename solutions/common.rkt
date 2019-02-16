@@ -1,6 +1,6 @@
 #lang racket
 
-(define (is_prime n)
+(define (is-prime n)
   (cond
     [(= n 1) #f]
     [(< n 4) #t]
@@ -16,10 +16,10 @@
      ]
     )
   )
-(provide is_prime)
+(provide is-prime)
 
 
-(define (sieve_primes n)
+(define (sieve-primes n)
   (define primes (make-vector (+ n 1) #t))
   (for* ([i (in-range 3 (+ n 1) 2)] ; Run sieve on odd numbers.
          #:when (vector-ref primes i)
@@ -29,15 +29,15 @@
                      #:when (vector-ref primes n))
             n))
   )
-(provide sieve_primes)
+(provide sieve-primes)
 
 
-(define (factors_count n (x 2) (count 0))
+(define (factors-count n (x 2) (count 0))
   (cond
     [(and (= n 1) (= count 0)) 1]
     [(and (> x (add1 (integer-sqrt n))) (= count 0)) 2]
-    [(= (modulo n x) 0) (factors_count (/ n x) x (add1 count))]
-    [else (if (> count 0) (* (add1 count) (factors_count n (add1 x) 0)) (factors_count n (add1 x) 0))]
+    [(= (modulo n x) 0) (factors-count (/ n x) x (add1 count))]
+    [else (if (> count 0) (* (add1 count) (factors-count n (add1 x) 0)) (factors-count n (add1 x) 0))]
     )
   )
-(provide factors_count)
+(provide factors-count)

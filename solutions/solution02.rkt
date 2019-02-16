@@ -10,8 +10,8 @@
   (fibo-mem 1 1)
   )
 
-(define (even_fibonacci_sum max)
+(define (even-fibonacci-sum max)
   (apply + (filter even? (fibonacci max)))
   )
 
-(even_fibonacci_sum 4000000)
+(even-fibonacci-sum 4000000)

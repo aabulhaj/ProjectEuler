@@ -26,7 +26,7 @@
     )
   )
 
-(define (diag_sum ls)
+(define (diag-sum ls)
   (apply max
          (map *
               (drop-right (car ls) 3)
@@ -36,7 +36,7 @@
               )
          )
   )
-(define (diag_sum_rev ls)
+(define (diag-sum-rev ls)
   (apply max
          (map *
               (drop-right (reverse (car ls)) 3)
@@ -49,11 +49,11 @@
 (define (diag grid)
   (cond
     [(<= (length grid) 4) 0]
-    [else (max (diag_sum grid) (diag_sum_rev grid) (diag (cdr grid)))]
+    [else (max (diag-sum grid) (diag-sum-rev grid) (diag (cdr grid)))]
     )
   )
 
-(define (vertical_sum ls)
+(define (vertical-sum ls)
   (apply max
          (map *
               (car ls)
@@ -64,14 +64,14 @@
 (define (vertical grid)
   (cond
     [(<= (length grid) 4) 0]
-    [else (max (vertical_sum grid) (vertical (cdr grid)))]
+    [else (max (vertical-sum grid) (vertical (cdr grid)))]
     )
   )
 
 (define (horiz grid)
   (cond
     [(<= (length grid) 4) 0]
-    [else (max (max_adj (car grid) 4) (horiz (cdr grid)))]
+    [else (max (max-adj (car grid) 4) (horiz (cdr grid)))]
     )
   )
 
