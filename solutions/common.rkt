@@ -41,3 +41,12 @@
     )
   )
 (provide factors-count)
+
+
+(define (num-to-digits x)
+  (map string->number
+         (drop-right
+          (cdr (string-split (number->string x) ""))
+          1))
+  )
+(provide num-to-digits)
