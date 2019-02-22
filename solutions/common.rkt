@@ -32,6 +32,7 @@
 (provide sieve-primes)
 
 
+; Number of prime factors for a given n.
 (define (factors-count n (x 2) (count 0))
   (cond
     [(and (= n 1) (= count 0)) 1]
