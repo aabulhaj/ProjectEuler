@@ -3,7 +3,7 @@
 
 (define triangle
   (map (lambda (x)
-	 (map string->number (string-split x))) (file->lines "solution67-triangle.txt"))
+	 (map string->number (string-split x))) (file->lines "problems_files/solution67-triangle.txt"))
   )
 
 (define/memoize (max-path-sum lst i)
