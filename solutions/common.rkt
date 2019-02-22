@@ -45,8 +45,14 @@
 
 (define (num-to-digits x)
   (map string->number
-         (drop-right
-          (cdr (string-split (number->string x) ""))
-          1))
+       (drop-right
+        (cdr (string-split (number->string x) ""))
+        1))
   )
 (provide num-to-digits)
+
+
+(define (divisible? n x)
+  (zero? (remainder n x))
+  )
+(provide divisible?)
