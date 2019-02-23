@@ -70,3 +70,30 @@
      )
   )
 (provide divisors-sum)
+
+
+(define (factorial x)
+  (cond
+    [(= 0 x) 1]
+    [else (* x (factorial (sub1 x)))]
+    )
+  )
+(provide factorial)
+
+
+(define (max-list xs)
+  (define (max x1 x2)
+    (if (> x1 x2) x1 x2))
+  (foldl max (car xs) (cdr xs))
+  )
+(provide max-list)
+
+
+(define (n-choose-r n r)
+  (apply *
+         (for/list
+             ([i  (in-range 1 (add1 r) 1)]) 
+           (/ (+ (- n r) i) i)) ; https://en.wikipedia.org/wiki/Binomial_coefficient#Multiplicative_formula
+         )
+  )
+(provide n-choose-r)
