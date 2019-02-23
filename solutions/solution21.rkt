@@ -2,14 +2,6 @@
 (require "common.rkt")
 (require racket/set)
 
-(define (divisors-sum n)
-  (apply +
-         (for/list ([i (in-range 1 n)]
-                    #:when (divisible? n i))
-           i)
-         )
-  )
-
 (define (amicable-nums-count max-num)
   (for/fold ([counter 0])
             ([i (in-range 1 max-num)]

@@ -57,3 +57,16 @@
   (zero? (remainder n x))
   )
 (provide divisible?)
+
+
+(define (divisors-sum n)
+  (+ 1
+     (for/sum ([i (in-range 2 (add1 (integer-sqrt n)))]
+               #:when (divisible? n i))
+       (+ i
+          (if (>= i (/ n i)) 0 (/ n i))
+          )
+       )
+     )
+  )
+(provide divisors-sum)
