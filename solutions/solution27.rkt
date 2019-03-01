@@ -14,13 +14,13 @@
   (for*/fold ([max-consec-primes 0]
               [mult 0]
               #:result mult)
-             ([a (in-range -1000 1001 1)]
+             ([a (in-range -999 1000 1)]
               [b (in-range -1000 1001 1)])
     (define consec-primes-count (consec-primes a b))
     (cond
       [(> consec-primes-count max-consec-primes)
        (values consec-primes-count (* a b))]
-      [else  (values max-consec-primes mult)]
+      [else (values max-consec-primes mult)]
       )
     )
   )
