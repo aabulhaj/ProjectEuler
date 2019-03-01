@@ -26,4 +26,5 @@ Problem 25: 4782
 Problem 26: 983
 Problem 27: -59231
 Problem 28: 669171001
+Problem 29: 9183
 Problem 67: 7273
