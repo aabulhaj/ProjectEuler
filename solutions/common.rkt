@@ -2,7 +2,7 @@
 
 (define (is-prime n)
   (cond
-    [(= n 1) #f]
+    [(<= n 1) #f]
     [(< n 4) #t]
     [(= 0 (modulo n 2)) #f]
     [(= 0 (modulo n 3)) #f]
